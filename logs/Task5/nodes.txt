@@ -1,0 +1,4 @@
+After starting haproxy : /nodes is empty
+After starting webapp1 : /nodes has "bbc027e4911f" in it
+After starting webapp2 : /nodes has "404794e7992e bbc027e4911f" in it
+After closing webapp1  : /nodes has "404794e7992e" in it

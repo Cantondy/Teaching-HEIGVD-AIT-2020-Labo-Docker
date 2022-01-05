@@ -1,0 +1,2 @@
+echo "Container 6b15f4cbd046 has joined the Serf cluster with the following IP address: 192.168.42.22" >> ha/config/hapro
+xy.cfg.hb
