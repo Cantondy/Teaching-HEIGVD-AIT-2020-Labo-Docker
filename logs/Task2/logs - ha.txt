@@ -1,0 +1,36 @@
+$ docker logs ha
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+/opt/bin/serf agent --join ha --replay --event-handler member-join=/serf-handlers/member-join.sh --event-handler member-leave,member-failed=/serf-handlers/member-leave.sh --tag role=balancer
+==> Starting Serf agent...
+==> Starting Serf agent RPC...
+==> Serf agent running!
+         Node name: '2393880ff53f'
+         Bind addr: '0.0.0.0:7946'
+                       RPC addr: '127.0.0.1:7373'
+                      Encrypted: false
+                       Snapshot: false
+                        Profile: lan
+    Message Compression Enabled: true
+==> Joining cluster...(replay: true)
+    Join completed. Synced with 1 initial agents
+
+==> Log data will now stream in as it occurs:
+
+    2022/01/04 20:07:42 [INFO] agent: Serf agent starting
+    2022/01/04 20:07:42 [INFO] serf: EventMemberJoin: 2393880ff53f 192.168.42.42
+    2022/01/04 20:07:42 [INFO] agent: joining: [ha] replay: true
+    2022/01/04 20:07:42 [INFO] agent: joined: 1 nodes
+[WARNING] 003/200743 (207) : Server nodes/s1 is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 0ms. 1 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+    2022/01/04 20:07:43 [INFO] serf: EventMemberJoin: 09fc33eb7a1b 192.168.42.22
+    2022/01/04 20:07:43 [INFO] serf: EventMemberJoin: 86e4cbd28869 192.168.42.11
+    2022/01/04 20:07:44 [INFO] agent: Received event: member-join
+    2022/01/04 20:07:44 [ERR] agent: Error invoking script '/serf-handlers/member-join.sh': exit status 127
+[WARNING] 003/200747 (207) : Server nodes/s1 is UP, reason: Layer7 check passed, code: 200, check duration: 7ms. 2 active and 0 backup servers online. 0 sessions requeued, 0 total in queue.
+
