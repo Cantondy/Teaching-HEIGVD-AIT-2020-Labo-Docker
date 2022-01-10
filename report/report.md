@@ -2,7 +2,57 @@
 
 **Authors : Jean-Luc Blanc, Dylan Canton, Christian Zaccaria**
 
-[TOC]
+
+
+### Table of content
+
+---
+
+**Introduction**
+**Task 0 : Identify issues and install the tools**
+	M1
+	M2
+	M3
+	M4
+	M5
+	M6
+	Deliverables of Task 0
+		Screenshot HAProxy
+		Repository URL
+**Task 1 : Add a process supervisor to run several processes**
+	Deliverables of Task 1
+		Screenshot HAProxy
+**Task 2 : Add a tool to manage membership in the web server cluster**
+	Answer problem with current solution
+	GOSSIP protocol used in SERF
+**Task 3 : React to membership changes**
+	Deliverables of Task 3
+**Task 4 : Use a template engine to easily generate configuration files**
+	Deliverables of Task 4
+		Q1
+		Q2
+		Q3
+		Q4
+**Task 5 : Generate a new load balancer configuration when membership changes**
+	Deliverables of Task 5
+		Q1
+		Q2
+		Q3
+		Q4
+**Task 6 : Make the load balancer automatically reload the new configuration**
+	Deliverables of Task 6
+**Difficulties encountered**
+**Conclusion**
+
+---
+
+
+
+## Introduction
+
+This laboratory allows you to set up a cluster of servers with Docker containers. HAProxy  will then be added in order to manage the containers and the configuration of the cluster.
+
+
 
 ## Task 0 : Identify issues and install the tools
 
@@ -62,6 +112,10 @@
 
 Repository URL : https://github.com/Cantondy/Teaching-HEIGVD-AIT-2020-Labo-Docker
 
+---
+
+
+
 ## Task 1 : Add a process supervisor to run several processes
 
 ### Deliverables of Task 1
@@ -75,6 +129,10 @@ Repository URL : https://github.com/Cantondy/Teaching-HEIGVD-AIT-2020-Labo-Docke
 > In this task we installed "s6" which is a process supervisor that will help us run multiple services on one container. We spent the task updating the dockfile and run scripts of the containers.
 >
 > No particular difficulties have arisen.
+
+---
+
+
 
 ## Task 2 : Add a tool to manage membership in the web server cluster
 
@@ -104,6 +162,10 @@ Sources :
 - https://www.serf.io/docs/internals/gossip.html
 - https://devopscube.com/open-source-service-discovery/
 
+---
+
+
+
 ## Task 3 : React to membership changes
 
 ### Deliverables of Task 3
@@ -115,6 +177,10 @@ Sources :
 *Provide the logs from the `ha` container gathered directly from the `/var/log/serf.log` file present in the container. Put the logs in the `logs` directory in your repo.*
 
 > See the `logs` folder
+
+---
+
+
 
 ## Task 4 : Use a template engine to easily generate configuration files
 
@@ -166,6 +232,10 @@ RUN command 1 && command 2 && command 3
 
 > Instead of adding a new line in the file each time a node joins the cluster, we overwrite it, which poses an issue since every time we add a new node we have to check the file manually in order to get the correct entry.
 
+---
+
+
+
 ## Task 5 : Generate a new load balancer configuration when membership changes
 
 ### Deliverables of Task 5
@@ -198,6 +268,10 @@ RUN command 1 && command 2 && command 3
 
 > We can use Consul for service discovery and manage the list of backend nodes. It keeps the list of alive nodes up to date and it is also used for load balancing between the backend nodes
 
+---
+
+
+
 ## Task 6 : Make the load balancer automatically reload the new configuration
 
 ### Deliverables of Task 6
@@ -212,9 +286,17 @@ RUN command 1 && command 2 && command 3
 
 > HAProxy seems to be a rather good solution as long as we don't have the need for too many nodes, since they are manually added in the docker-compose configuration file, we could use "replicas" in order to start many containers that have the same configuration at the same time.
 
+---
+
+
+
 ## Difficulties encountered
 
 > The 2 main difficulties for us in this lab were the constant caching of docker that wouldn't take into account some minor changes as well as the fact that some errors we encountered were due to CRLF end of lines instead of LF.
+
+
+
+---
 
 ## Conclusion
 
