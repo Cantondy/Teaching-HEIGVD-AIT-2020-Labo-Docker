@@ -10,37 +10,37 @@
 
 **Introduction**  
 **Task 0 : Identify issues and install the tools**  
-	M1  
-	M2  
-	M3  
-	M4  
-	M5  
-	M6  
-	Deliverables of Task 0  
-		Screenshot HAProxy  
-		Repository URL  
+		M1  
+		M2  
+		M3  
+		M4  
+		M5  
+		M6  
+		Deliverables of Task 0  
+			Screenshot HAProxy  
+			Repository URL  
 **Task 1 : Add a process supervisor to run several processes**  
-	Deliverables of Task 1  
-		Screenshot HAProxy  
+		Deliverables of Task 1  
+			Screenshot HAProxy  
 **Task 2 : Add a tool to manage membership in the web server cluster**  
-	Answer problem with current solution  
-	GOSSIP protocol used in SERF  
+		Answer problem with current solution  
+		GOSSIP protocol used in SERF  
 **Task 3 : React to membership changes**  
-	Deliverables of Task 3  
+		Deliverables of Task 3  
 **Task 4 : Use a template engine to easily generate configuration files**  
-	Deliverables of Task 4  
-		Q1  
-		Q2  
-		Q3  
-		Q4  
+		Deliverables of Task 4  
+			Q1  
+			Q2  
+			Q3  
+			Q4  
 **Task 5 : Generate a new load balancer configuration when membership changes**  
-	Deliverables of Task 5  
-		Q1  
-		Q2  
-		Q3  
-		Q4  
+		Deliverables of Task 5  
+			Q1  
+			Q2  
+			Q3  
+			Q4  
 **Task 6 : Make the load balancer automatically reload the new configuration**  
-	Deliverables of Task 6  
+		Deliverables of Task 6  
 **Difficulties encountered**  
 **Conclusion**  
 
